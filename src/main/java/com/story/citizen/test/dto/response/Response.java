@@ -1,4 +1,4 @@
-package com.story.citizen.dto.response;
+package com.story.citizen.test.dto.response;
 
 import lombok.AccessLevel;
 import lombok.Getter;
