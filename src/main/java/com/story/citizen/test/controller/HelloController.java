@@ -1,8 +1,8 @@
-package com.story.citizen.controller;
+package com.story.citizen.test.controller;
 
-import com.story.citizen.dto.Hello;
-import com.story.citizen.dto.response.Response;
-import com.story.citizen.dto.response.ResponseCode;
+import com.story.citizen.test.dto.Hello;
+import com.story.citizen.test.dto.response.Response;
+import com.story.citizen.test.dto.response.ResponseCode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

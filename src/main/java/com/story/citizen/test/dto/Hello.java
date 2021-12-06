@@ -1,4 +1,4 @@
-package com.story.citizen.dto;
+package com.story.citizen.test.dto;
 
 import lombok.Getter;
 import lombok.Setter;
