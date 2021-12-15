@@ -3,8 +3,7 @@ package com.story.citizen.test.controller;
 import com.story.citizen.test.dto.Hello;
 import com.story.citizen.test.dto.response.Response;
 import com.story.citizen.test.dto.response.ResponseCode;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -15,10 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
+@Slf4j
 public class HelloController {
-
-    private final Logger logger = LoggerFactory.getLogger(HelloController.class);
-
     @GetMapping("hello")
     public String hello(Model model) {
         model.addAttribute("data", "hello!!");
@@ -28,7 +25,7 @@ public class HelloController {
     @ResponseBody
     @PostMapping("hello-test")
     public ResponseEntity<String> helloPostTest(@RequestBody Hello hello) {
-        logger.info("*******수신 Data::" + hello.toString());
+        log.info("*******수신 Data::" + hello.toString());
         Response response = Response.of(ResponseCode.RP000);
         ResponseEntity<String> responseEntity = new ResponseEntity<>(response.getResponseResult(), HttpStatus.OK);
 
