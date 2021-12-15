@@ -2,20 +2,29 @@ package com.story.citizen.domain;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.Column;
-import javax.validation.constraints.NotEmpty;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-@Getter
-@Setter
+@Entity
+@Getter @Setter @ToString
 public class Member {
 
-    @Column(name = "citizen_no")
-    @NotEmpty
+    @Id
+    @Column(name = "citizen_no", nullable = false)
     private Long citizenNo;
 
+    @Column(nullable = false)
     private String email;
+
+    @Column(name = "name", nullable = false)
     private String realName;
+
+    @Column(nullable = false)
     private String password;
-    private Long birth;
+
+    @Column(nullable = false)
+    private int birth;
 }
