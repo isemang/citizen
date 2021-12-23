@@ -2,16 +2,16 @@ package com.story.citizen.domain;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.*;
 
 @Entity
-@Getter @Setter @ToString
+@Getter @Setter
 public class Citizen extends Member {
+
+    @OneToOne
+    @JoinColumn(name = "citizen_no")
+    private Member member;
 
     @Column(name = "citizen_id", nullable = false)
     private String citizenId;
