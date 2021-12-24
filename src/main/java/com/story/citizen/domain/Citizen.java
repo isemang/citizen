@@ -1,5 +1,6 @@
 package com.story.citizen.domain;
 
+import com.story.citizen.domain.enumType.YesNoType;
 import lombok.Getter;
 import lombok.Setter;
 
