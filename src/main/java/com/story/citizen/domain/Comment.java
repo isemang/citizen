@@ -1,34 +1,46 @@
 package com.story.citizen.domain;
 
-import com.story.citizen.domain.enumType.YesNoType;
+import com.story.citizen.domain.base.BaseEntity;
+import com.story.citizen.domain.enumType.YnType;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
-@Getter @Setter
-public class Comment {
+@Getter
+@Setter
+public class Comment extends BaseEntity {
 
     @Id
     @GeneratedValue
-    @Column(name = "", nullable = false)
+    @Column(name = "comment_no")
     private Long commentNo;
 
-    @Column(name = "")
     @Enumerated(EnumType.STRING)
-    private YesNoType childCommentYn;
+    @Column(name = "child_comment_yn")
+    private YnType childCommentYn;
 
-    //이거 comment랑 결합되어있는 느낌? 인 것 같은데
-    @Column(name = "")
-    private Long ParentCommentNo;
+    @Column(name = "parent_comment_no")
+    private Long parentCommentNo;
 
-    @Column(name = "")
-    private String content;
+    @Column(name = "comment_detail")
+    private String commentDetail;
 
-    @Column(name = "")
+    @Column(name = "like_cnt")
     private Long likeCnt;
 
-    //postNo로 post랑 연결됨
-    //citizenNo로 citizen과 연결됨
+    //comment-citizen
+    //한 코멘트는 한 시티즌만 작성할 수 있음
+    //한 시티즌은 여러 코멘트를 작성할 수 있음
+    @ManyToOne
+    @JoinColumn(name = "citizen_no")
+    private Citizen citizen;
+
+    //comment-post
+    //한 코멘트는 한 포스트에만 귀속될 수 있다
+    //한 포스트에는 여러 코멘트가 있을 수 있다
+    @ManyToOne
+    @JoinColumn(name = "post_no")
+    private Post post;
 }

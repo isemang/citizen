@@ -1,5 +1,6 @@
 package com.story.citizen.domain;
 
+import com.story.citizen.domain.base.FileBaseEntity;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,18 +8,11 @@ import javax.persistence.*;
 
 @Entity
 @Getter @Setter
-public class ProfileFile {
+public class ProfileFile extends FileBaseEntity {
 
     @Id
     @GeneratedValue
-    @Column(name = "", nullable = false)
+    @Column(name = "profile_file_no")
     private Long profileFileNo;
 
-    @Column(name = "")
-    private String fileNm;
-
-    @Column(name = "")
-    private String filePath;
-
-    //citizenNo로 citizen과 연결됨
 }
