@@ -11,7 +11,7 @@ import javax.persistence.*;
 public class PostFile {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long postFileNo;
 
     @Column(name = "")
