@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 @Entity
 @Getter
-@Setter
+
 public class HashtagList {
     //post-hashtag간 다대다관계를 풀어주는 엔티티
 

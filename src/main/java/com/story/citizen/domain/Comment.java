@@ -1,13 +1,13 @@
 package com.story.citizen.domain;
 
-import com.story.citizen.domain.enumType.YesNoType;
+import com.story.citizen.domain.enumType.YnType;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
-@Getter @Setter
+@Getter 
 public class Comment {
 
     @Id
@@ -17,7 +17,7 @@ public class Comment {
 
     @Column(name = "")
     @Enumerated(EnumType.STRING)
-    private YesNoType childCommentYn;
+    private YnType childCommentYn;
 
     //이거 comment랑 결합되어있는 느낌? 인 것 같은데
     @Column(name = "")

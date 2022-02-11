@@ -1,13 +1,13 @@
 package com.story.citizen.domain;
 
-import com.story.citizen.domain.enumType.YesNoType;
+import com.story.citizen.domain.enumType.YnType;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
-@Getter @Setter
+@Getter 
 public class Post {
 
     @Id
@@ -17,7 +17,7 @@ public class Post {
 
     @Column(name = "")
     @Enumerated(EnumType.STRING)
-    private YesNoType locationYn;
+    private YnType locationYn;
 
     @Column(name = "")
     private String content;

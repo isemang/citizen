@@ -5,7 +5,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Getter
-@Setter
+
 @ToString
 public class Hello {
     private String id;
