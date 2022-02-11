@@ -2,7 +2,6 @@ package com.story.citizen.domain;
 
 import com.story.citizen.domain.enumType.YnType;
 import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
 
