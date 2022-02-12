@@ -1,16 +1,22 @@
 package com.story.citizen.domain;
 
 import com.story.citizen.domain.enumType.YnType;
+import lombok.Builder;
 import lombok.Getter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Getter
+@Builder
 public class Citizen {
+
+    protected Citizen() {
+    }
 
     /***** 멤버 기본 정보 *****/
     @Id
@@ -25,7 +31,7 @@ public class Citizen {
     private String password;
 
     @Column(name = "birth")
-    private LocalDateTime birth;
+    private LocalDate birth;
 
     @Column(name = "name")
     private String realName;
