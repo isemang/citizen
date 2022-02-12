@@ -1,12 +1,14 @@
 package com.story.citizen.domain;
 
+import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Getter
+@Builder
 public class Member {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,5 +25,8 @@ public class Member {
     private String password;
 
     @Column(nullable = false)
-    private int birth;
+    private LocalDate birth;
+
+    protected Member() {
+    }
 }
