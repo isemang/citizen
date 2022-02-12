@@ -2,13 +2,11 @@ package com.story.citizen.domain;
 
 import com.story.citizen.domain.enumType.HashtagType;
 import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
-
 public class HashtagList {
     //post-hashtag간 다대다관계를 풀어주는 엔티티
 
@@ -26,15 +24,15 @@ public class HashtagList {
     @Column(name = "hashtag_type")
     private HashtagType hashtagType;    //해시태그 위치(comment, post)
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "hashtag_no")
     private Hashtag hashtag;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "post_no")
     private Post post;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "comment_no")
     private Comment comment;
 }

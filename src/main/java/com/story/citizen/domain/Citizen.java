@@ -2,7 +2,6 @@ package com.story.citizen.domain;
 
 import com.story.citizen.domain.enumType.YnType;
 import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -49,7 +48,7 @@ public class Citizen {
     private YnType profilePhotoYn;
 
     //profile_file 테이블과 연결되어있음
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "profile_photo_no")
     private ProfileFile profileFile;
 
