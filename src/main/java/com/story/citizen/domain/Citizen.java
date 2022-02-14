@@ -22,7 +22,7 @@ public class Citizen {
     @Id
     @GeneratedValue
     @Column(name = "citizen_no")
-    private Long citizenNo;
+    private Long pkNo;
 
     @Column(name = "email")
     private String email;

@@ -9,16 +9,16 @@ import javax.persistence.*;
 public class Location {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "", nullable = false)
-    private Long locationNo;
+    @GeneratedValue
+    @Column(name = "location_no")
+    private Long pkNo;
 
-    @Column(name = "")
+    @Column(name = "location_nm")
     private String locationNm;
 
-    @Column(name = "")
+    @Column(name = "latitude")
     private Double latitude;
 
-    @Column(name = "")
+    @Column(name = "longitude")
     private Double longitude;
 }

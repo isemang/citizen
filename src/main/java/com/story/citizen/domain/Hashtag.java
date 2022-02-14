@@ -3,19 +3,25 @@ package com.story.citizen.domain;
 import lombok.Getter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
 public class Hashtag {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "", nullable = false)
-    private Long hashtagNo;
+    @GeneratedValue
+    @Column(name = "hashtag_no")
+    private Long pkNo;
 
-    @Column(name = "")
+    @Column(name = "hashtag_nm")
     private String hashtagNm;
 
-    @Column(name = "")
+    @Column(name = "hashtag_cnt")
     private Long hashtagCnt;
+
+    //postHashtag와 양방향 매핑
+    @OneToMany(mappedBy = "HashtagList")
+    List<HashtagList> hashtagList = new ArrayList<>();
 }

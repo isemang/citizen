@@ -18,7 +18,7 @@ public class HashtagList {
     @Id
     @GeneratedValue
     @Column(name = "post_hashtag_no")
-    private Long postHashtagNo;
+    private Long pkNo;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "hashtag_type")
