@@ -22,7 +22,7 @@ public class CitizenRepository {
 
 }
 /*
-    private Long citizenNo;
+    private Long pkNo;
     private String email;
     private String realName;
     private String password;
