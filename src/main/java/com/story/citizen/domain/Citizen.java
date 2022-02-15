@@ -1,6 +1,7 @@
 package com.story.citizen.domain;
 
 import com.story.citizen.domain.enumType.YnType;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -13,6 +14,8 @@ import java.util.List;
 @Entity
 @Getter
 @Builder
+@AllArgsConstructor
+@Table(name = "CITIZEN")
 public class Citizen {
 
     protected Citizen() {
@@ -59,6 +62,6 @@ public class Citizen {
     private ProfileFile profileFile;
 
     //post와 양방향 매핑: citizen이 어떤 post를 올렸는지 확인해야 함
-    @OneToMany(mappedBy = "post")
+    @OneToMany(mappedBy = "Post")
     List<Post> posts = new ArrayList<>();
 }

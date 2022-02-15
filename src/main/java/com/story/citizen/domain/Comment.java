@@ -8,6 +8,7 @@ import javax.persistence.*;
 
 @Entity
 @Getter
+@Table(name = "COMMENT")
 public class Comment extends BaseEntity {
 
     @Id
@@ -31,14 +32,14 @@ public class Comment extends BaseEntity {
     //comment-citizen
     //한 코멘트는 한 시티즌만 작성할 수 있음
     //한 시티즌은 여러 코멘트를 작성할 수 있음
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "citizen_no")
     private Citizen citizen;
 
     //comment-post
     //한 코멘트는 한 포스트에만 귀속될 수 있다
     //한 포스트에는 여러 코멘트가 있을 수 있다
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "post_no")
     private Post post;
 }

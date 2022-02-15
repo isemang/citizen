@@ -13,7 +13,7 @@ public class FileRepository {
     private final EntityManager em;
 
     public void saveProfileFile(ProfileFile profileFile) {
-        if (profileFile.getProfileFileNo() == null) {
+        if (profileFile.getPkNo() == null) {
             em.persist(profileFile);
         } else {
             em.merge(profileFile);

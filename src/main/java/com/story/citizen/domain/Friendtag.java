@@ -7,6 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @Getter
+@Table(name = "FRIENDTAG")
 public class Friendtag {
 
     @Id
@@ -28,21 +29,21 @@ public class Friendtag {
     //friendtag-citizen 관계
     //한 friendtag는 한 명의 시티즌에만 가능
     //한 시티즌은 여러 프랜드태그에 있을 수 있음
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "citizen_no")
     private Citizen citizen;
 
     //friendtag-post 관계
     //한 프랜드태그는 한 포스트에만 가능
     //한 포스트는 여러 프랜드 태그 가질 수 있음
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "post_no")
     private Post post;
 
     //friendtag-postFile 관계 (없음도 가능)
     //한 프랜드태그는 하나 or 0개의 포스트 파일에만 가능
     //한 포스트파일에는 여러개의 프랜드태그 가능
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "post_file_no")
     private PostFile postFile;
 

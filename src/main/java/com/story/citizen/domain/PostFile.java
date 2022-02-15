@@ -8,6 +8,7 @@ import javax.persistence.*;
 
 @Entity
 @Getter
+@Table(name = "POST_FILE")
 public class PostFile extends FileBaseEntity {
 
     @Id
@@ -22,7 +23,7 @@ public class PostFile extends FileBaseEntity {
     //postFile-post 관계
     //한 포스트는 여러개의 포스트파일을 가질 수 있고
     //한 포스트파일은 한 포스트에만 귀속될 수 있다
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "post_no")
     private Post post;
 

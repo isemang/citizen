@@ -6,6 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Getter
+@Table(name = "LOCATION")
 public class Location {
 
     @Id

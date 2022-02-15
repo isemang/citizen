@@ -8,6 +8,7 @@ import javax.persistence.*;
 
 @Entity
 @Getter
+@Table(name = "POST")
 public class Post extends BaseEntity {
 
     @Id
@@ -26,7 +27,7 @@ public class Post extends BaseEntity {
     //하나의 맴버는 한 팀에만 귀속됨
     //member 입장 :   @ManyToOne, @JoinColumn 적으면 됨
     //team 입장 :     @OneToMany(mappedBy = "team")을 적어야 함
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "citizen_no")
     private Citizen citizen;
 
@@ -37,7 +38,7 @@ public class Post extends BaseEntity {
     //post-location 간 관계
     //한 포스트는 하나의 로케이션만 가질 수 있음
     //한 로케이션은 여러군데에서 태그될 수 있음
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "location_no")
     private Location location;
 

@@ -7,6 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @Getter
+@Table(name = "PROFILE_FILE")
 public class ProfileFile extends FileBaseEntity {
 
     @Id
