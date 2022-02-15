@@ -23,6 +23,6 @@ public class Hashtag {
     private Long hashtagCnt;
 
     //postHashtag와 양방향 매핑
-    @OneToMany(mappedBy = "HashtagList")
+    @OneToMany(mappedBy = "hashtag")
     List<HashtagList> hashtagList = new ArrayList<>();
 }

@@ -19,7 +19,7 @@ public class Post extends BaseEntity {
     //citizen-post 관계
     //하나의 시티즌은 여러 포스트를 가질 수 있고
     //한 포스트는 하나의 시티즌에만 귀속됨
-    //citizen 입장 :  @OneToMany(mappedBy = "post") 적으면 됨
+    //citizen 입장 :  @OneToMany(mappedBy = "citizen") 적으면 됨
     //post 입장 :     @ManyToOne, @JoinColumn 적으면 됨
 
     //인프런 JPA 예제 속 member-team

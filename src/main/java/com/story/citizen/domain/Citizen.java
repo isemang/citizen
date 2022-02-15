@@ -62,6 +62,6 @@ public class Citizen {
     private ProfileFile profileFile;
 
     //post와 양방향 매핑: citizen이 어떤 post를 올렸는지 확인해야 함
-    @OneToMany(mappedBy = "Post")
+    @OneToMany(mappedBy = "citizen")
     List<Post> posts = new ArrayList<>();
 }
