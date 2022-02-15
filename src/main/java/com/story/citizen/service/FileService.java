@@ -18,7 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class FileService {
 
     private final FileRepository fileRepository;
-    private final FileUtil fileUtil;
+    private static final FileUtil fileUtil = new FileUtil();
 
     @Transactional
     public void saveProfileFile(MultipartFile file) {
